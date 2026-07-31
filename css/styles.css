@@ -25,10 +25,9 @@ header h1 {
 }
 
 header h2 {
-    margin-top: 15px;
-    font-size: 1.5em;
+    margin-top: 10px;
     font-weight: normal;
-    color: yellow;
+    color: #ffffff;
 }
 
 main {
