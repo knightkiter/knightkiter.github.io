@@ -1,6 +1,7 @@
-/*=================================================
+/*
     Michael Lanser Portfolio
-==================================================*/
+    File Name: styles.css
+*/
 
 /* ---------- CSS Reset ---------- */
 
@@ -10,137 +11,184 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
 /* ---------- Body ---------- */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fa;
-    color: #333;
+    background-color: #f4f7fa;
+    color: #333333;
     line-height: 1.6;
 }
 
 /* ---------- Navigation ---------- */
 
-nav {
-    background: #0b5f7a;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+.site-nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    background-color: #084f66;
+    padding: 18px 5%;
 }
 
 .logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.6em;
+    color: #ffffff;
+    font-size: 1.45rem;
     font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 30px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+
+    list-style: none;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
+    color: #ffffff;
     font-weight: bold;
-    transition: color .3s;
+    text-decoration: none;
+    transition: color 0.25s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus {
     color: #ffd700;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero Section ---------- */
 
 .hero {
-    background: #0b5f7a;
-    color: white;
+    background-color: #0b6b86;
+    color: #ffffff;
     text-align: center;
-    padding: 80px 20px;
+    padding: 85px 20px;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-label {
+    color: #d7eef5;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.08rem;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .hero h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    line-height: 1.15;
 }
 
 .hero h2 {
-    font-size: 2em;
-    color: #ffffff;
-    font-weight: normal;
-}
-
-.hero p {
-    margin-top: 25px;
-    font-size: 1.3em;
     color: #e8f4f8;
+    font-size: clamp(1.15rem, 3vw, 1.7rem);
+    font-weight: normal;
+    margin-top: 15px;
 }
 
-/* ---------- Main ---------- */
+.hero-summary {
+    max-width: 760px;
+    margin: 22px auto 0;
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+/* ---------- Main Content ---------- */
 
 main {
     width: 90%;
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 42px auto;
 }
 
-/* ---------- Content Cards ---------- */
-
-section {
-    background: white;
-    margin-bottom: 35px;
+main section {
+    background-color: #ffffff;
+    margin-bottom: 32px;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 5px 18px rgba(0,0,0,.10);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
 }
 
-section h2 {
+main h2 {
     color: #0b5f7a;
-    margin-bottom: 20px;
-    font-size: 2em;
+    font-size: 2rem;
+    margin-bottom: 18px;
 }
 
-section p {
-    font-size: 1.15em;
+main h3 {
+    color: #24434f;
+    margin-bottom: 10px;
 }
 
-/*=================================================
-                Featured Projects
-==================================================*/
+main p {
+    margin-bottom: 14px;
+}
+
+/* ---------- Featured Projects ---------- */
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 25px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
 }
 
 .project-card {
-    background: #f8fbfc;
-    border: 1px solid #d7e6ec;
+    display: flex;
+    background-color: #f8fbfc;
+    border: 1px solid #d9e8ed;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,.08);
-    transition: .3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+    transform: translateY(-5px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.14);
 }
 
 .project-content {
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 24px;
 }
 
 .project-card h3 {
     color: #0b5f7a;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
 }
 
 .project-card p {
@@ -148,130 +196,249 @@ section p {
 }
 
 .project-tech {
-    font-size: .95em;
-    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 0 18px;
+}
+
+/* ---------- Technology Badges ---------- */
+
+.tech-badge {
+    display: inline-block;
+    background-color: #dff1f6;
+    color: #084f66;
+    border: 1px solid #b7dce6;
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 0.85rem;
     font-weight: bold;
 }
 
 .project-links {
-    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: auto;
 }
 
-/*=================================================
-                    Skills Grid
-==================================================*/
+/* ---------- Skills ---------- */
 
-.skills-grid {
+.skills-list {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 22px;
+
+    list-style: none;
 }
 
-.skill-box {
-    background: #e8f4f8;
-    padding: 18px;
-    border-left: 5px solid #0b5f7a;
+.skills-list li {
+    background-color: #edf7fa;
+    border-left: 4px solid #0b5f7a;
     border-radius: 5px;
+    padding: 11px 13px;
     font-weight: bold;
 }
 
-/*=================================================
-                    Buttons
-==================================================*/
+/* ---------- Education ---------- */
+
+.education-entry {
+    margin-bottom: 24px;
+}
+
+.education-entry:last-child {
+    margin-bottom: 0;
+}
+
+.education-entry h3 {
+    margin-bottom: 6px;
+}
+
+/* ---------- Buttons ---------- */
 
 .button {
     display: inline-block;
-    background: #0b5f7a;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 6px;
-    text-decoration: none;
+    background-color: #0b5f7a;
+    color: #ffffff;
+    border: 2px solid #0b5f7a;
+    border-radius: 7px;
+    padding: 11px 20px;
     font-weight: bold;
-    transition: .3s;
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.button:hover {
-    background: #08455a;
+.button:hover,
+.button:focus {
+    background-color: #08475c;
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-1px);
 }
 
 .button-secondary {
-    background: white;
+    background-color: #ffffff;
     color: #0b5f7a;
-    border: 2px solid #0b5f7a;
 }
 
-.button-secondary:hover {
-    background: #0b5f7a;
-    color: white;
+.button-secondary:hover,
+.button-secondary:focus {
+    background-color: #e8f4f8;
+    color: #073e50;
+}
+
+.hero .button-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.hero .button-secondary:hover,
+.hero .button-secondary:focus {
+    background-color: #ffffff;
+    color: #0b5f7a;
 }
 
 .button-disabled {
-    background: #d8dde1;
-    color: #666;
-    cursor: default;
+    background-color: #d9e1e5;
+    border-color: #d9e1e5;
+    color: #59666c;
+    cursor: not-allowed;
 }
 
 .button-disabled:hover {
-    background: #d8dde1;
-    color: #666;
+    background-color: #d9e1e5;
+    color: #59666c;
+    transform: none;
 }
 
-/*=================================================
-                    Contact
-==================================================*/
+/* ---------- General Links ---------- */
+
+main a:not(.button) {
+    color: #0b5f7a;
+    font-weight: bold;
+}
+
+main a:not(.button):hover,
+main a:not(.button):focus {
+    color: #073e50;
+}
+
+/* ---------- Contact ---------- */
 
 .contact-links {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 18px;
 }
 
-/*=================================================
-                    Footer
-==================================================*/
+/* ---------- Footer ---------- */
 
 footer {
-    background: #0b5f7a;
-    color: white;
+    background-color: #084f66;
+    color: #ffffff;
     text-align: center;
-    padding: 25px;
-    margin-top: 50px;
+    padding: 24px 20px;
+    margin-top: 42px;
 }
 
-/*=================================================
-                Responsive Design
-==================================================*/
+footer p {
+    margin-bottom: 6px;
+}
 
-@media screen and (max-width: 900px) {
+footer p:last-child {
+    margin-bottom: 0;
+}
 
-    nav {
+footer a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+/* ---------- Tablet Layout ---------- */
+
+@media screen and (max-width: 850px) {
+
+    .site-nav {
         flex-direction: column;
-        gap: 15px;
+        padding: 16px 20px;
     }
 
     .nav-links {
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 18px;
-    }
-
-    .hero h1 {
-        font-size: 2.7em;
-    }
-
-    .hero h2 {
-        font-size: 1.5em;
     }
 
     .project-grid {
         grid-template-columns: 1fr;
     }
 
-    .skills-grid {
+    .skills-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- Small Mobile Layout ---------- */
+
+@media screen and (max-width: 540px) {
+
+    html {
+        scroll-padding-top: 150px;
+    }
+
+    .logo a {
+        font-size: 1.25rem;
+    }
+
+    .nav-links {
+        gap: 10px 16px;
+    }
+
+    .nav-links a {
+        font-size: 0.93rem;
+    }
+
+    .hero {
+        padding: 60px 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 26px;
+    }
+
+    main section {
+        padding: 23px 18px;
+    }
+
+    main h2 {
+        font-size: 1.7rem;
+    }
+
+    .skills-list {
         grid-template-columns: 1fr;
     }
 
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .button {
+        text-align: center;
+    }
 }
