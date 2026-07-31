@@ -1,72 +1,253 @@
-/* Michael Lanser Portfolio */
+/*
+    Michael Lanser Portfolio
+    File Name: styles.css
+*/
 
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+/* Body */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fa;
-    color: #333;
+    background-color: #f4f7fa;
+    color: #333333;
     line-height: 1.6;
 }
 
-header {
-    background: #0b5f7a;
-    color: white;
+/* Navigation */
+nav {
+    background-color: #084f66;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 18px 5%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: #ffd700;
+}
+
+/* Hero */
+.hero {
+    background-color: #0b6b86;
+    color: #ffffff;
     text-align: center;
-    padding: 60px 20px;
+    padding: 75px 20px;
 }
 
-header h1 {
-    font-size: 3em;
+.hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.15;
 }
 
-header h2 {
-    margin-top: 10px;
-    font-weight: normal;
+.hero h2 {
     color: #e8f4f8;
+    font-size: clamp(1.15rem, 3vw, 1.65rem);
+    font-weight: normal;
+    margin-top: 15px;
 }
 
+.hero p {
+    font-size: 1.1rem;
+    margin-top: 18px;
+}
+
+/* Main Content */
 main {
     width: 90%;
     max-width: 1000px;
     margin: 40px auto;
 }
 
-section {
-    background: white;
+main section {
+    background-color: #ffffff;
     margin-bottom: 30px;
-    padding: 25px;
+    padding: 28px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+main h2 {
     color: #0b5f7a;
     margin-bottom: 15px;
 }
 
-ul {
-    margin-left: 25px;
+main h3 {
+    color: #24434f;
+    margin-top: 18px;
+    margin-bottom: 6px;
 }
 
-footer {
-    background: #0b5f7a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+main p {
+    margin-bottom: 12px;
 }
 
-a {
+main ul {
+    padding-left: 24px;
+}
+
+main li {
+    margin-bottom: 7px;
+}
+
+/* Skills */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 25px;
+}
+
+.skills-list li {
+    background-color: #edf7fa;
+    border-left: 4px solid #0b5f7a;
+    border-radius: 4px;
+    list-style: none;
+    padding: 10px 12px;
+}
+
+/* General Links */
+main a {
     color: #0b5f7a;
-    text-decoration: none;
     font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
+main a:hover,
+main a:focus {
+    color: #073e50;
+}
+
+/* Contact Buttons */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #0b5f7a;
+    color: #ffffff;
+    border: 2px solid #0b5f7a;
+    border-radius: 7px;
+    padding: 11px 20px;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #08475c;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.button-secondary {
+    background-color: #ffffff;
+    color: #0b5f7a;
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+    background-color: #e8f4f8;
+    color: #073e50;
+}
+
+/* Footer */
+footer {
+    background-color: #084f66;
+    color: #ffffff;
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+}
+
+/* Tablet and Mobile Layout */
+@media screen and (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        padding: 16px 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Small Mobile Layout */
+@media screen and (max-width: 520px) {
+
+    .nav-links {
+        gap: 10px 16px;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 55px 18px;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+    main section {
+        padding: 22px 18px;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .button {
+        text-align: center;
+    }
 }
