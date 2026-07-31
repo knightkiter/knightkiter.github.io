@@ -1,253 +1,277 @@
-/*
+/*=================================================
     Michael Lanser Portfolio
-    File Name: styles.css
-*/
+==================================================*/
 
-/* CSS Reset */
+/* ---------- CSS Reset ---------- */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
+/* ---------- Body ---------- */
 
-/* Body */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f7fa;
-    color: #333333;
+    background: #f4f7fa;
+    color: #333;
     line-height: 1.6;
 }
 
-/* Navigation */
+/* ---------- Navigation ---------- */
+
 nav {
-    background-color: #084f66;
+    background: #0b5f7a;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 18px 5%;
-
+    padding: 20px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo a {
-    color: #ffffff;
-    font-size: 1.45rem;
-    font-weight: bold;
+    color: white;
     text-decoration: none;
-    white-space: nowrap;
+    font-size: 1.6em;
+    font-weight: bold;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 1.25rem;
     list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: #ffffff;
-    font-weight: bold;
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color .3s;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
+.nav-links a:hover {
     color: #ffd700;
 }
 
-/* Hero */
+/* ---------- Hero ---------- */
+
 .hero {
-    background-color: #0b6b86;
-    color: #ffffff;
+    background: #0b5f7a;
+    color: white;
     text-align: center;
-    padding: 75px 20px;
+    padding: 80px 20px;
 }
 
 .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    line-height: 1.15;
+    font-size: 4em;
+    margin-bottom: 20px;
 }
 
 .hero h2 {
-    color: #e8f4f8;
-    font-size: clamp(1.15rem, 3vw, 1.65rem);
+    font-size: 2em;
+    color: #ffffff;
     font-weight: normal;
-    margin-top: 15px;
 }
 
 .hero p {
-    font-size: 1.1rem;
-    margin-top: 18px;
+    margin-top: 25px;
+    font-size: 1.3em;
+    color: #e8f4f8;
 }
 
-/* Main Content */
+/* ---------- Main ---------- */
+
 main {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px auto;
 }
 
-main section {
-    background-color: #ffffff;
-    margin-bottom: 30px;
-    padding: 28px;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+/* ---------- Content Cards ---------- */
+
+section {
+    background: white;
+    margin-bottom: 35px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10);
 }
 
-main h2 {
+section h2 {
+    color: #0b5f7a;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+section p {
+    font-size: 1.15em;
+}
+
+/*=================================================
+                Featured Projects
+==================================================*/
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.project-card {
+    background: #f8fbfc;
+    border: 1px solid #d7e6ec;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-card h3 {
     color: #0b5f7a;
     margin-bottom: 15px;
 }
 
-main h3 {
-    color: #24434f;
-    margin-top: 18px;
-    margin-bottom: 6px;
+.project-card p {
+    margin-bottom: 15px;
 }
 
-main p {
-    margin-bottom: 12px;
-}
-
-main ul {
-    padding-left: 24px;
-}
-
-main li {
-    margin-bottom: 7px;
-}
-
-/* Skills */
-.skills-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px 25px;
-}
-
-.skills-list li {
-    background-color: #edf7fa;
-    border-left: 4px solid #0b5f7a;
-    border-radius: 4px;
-    list-style: none;
-    padding: 10px 12px;
-}
-
-/* General Links */
-main a {
-    color: #0b5f7a;
+.project-tech {
+    font-size: .95em;
+    color: #666;
     font-weight: bold;
 }
 
-main a:hover,
-main a:focus {
-    color: #073e50;
-}
-
-/* Contact Buttons */
-.contact-links {
+.project-links {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
+
+/*=================================================
+                    Skills Grid
+==================================================*/
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.skill-box {
+    background: #e8f4f8;
+    padding: 18px;
+    border-left: 5px solid #0b5f7a;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/*=================================================
+                    Buttons
+==================================================*/
 
 .button {
     display: inline-block;
-    background-color: #0b5f7a;
-    color: #ffffff;
-    border: 2px solid #0b5f7a;
-    border-radius: 7px;
-    padding: 11px 20px;
+    background: #0b5f7a;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
     text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
 }
 
-.button:hover,
-.button:focus {
-    background-color: #08475c;
-    color: #ffffff;
-    text-decoration: none;
+.button:hover {
+    background: #08455a;
 }
 
 .button-secondary {
-    background-color: #ffffff;
+    background: white;
     color: #0b5f7a;
+    border: 2px solid #0b5f7a;
 }
 
-.button-secondary:hover,
-.button-secondary:focus {
-    background-color: #e8f4f8;
-    color: #073e50;
+.button-secondary:hover {
+    background: #0b5f7a;
+    color: white;
 }
 
-/* Footer */
+.button-disabled {
+    background: #d8dde1;
+    color: #666;
+    cursor: default;
+}
+
+.button-disabled:hover {
+    background: #d8dde1;
+    color: #666;
+}
+
+/*=================================================
+                    Contact
+==================================================*/
+
+.contact-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/*=================================================
+                    Footer
+==================================================*/
+
 footer {
-    background-color: #084f66;
-    color: #ffffff;
+    background: #0b5f7a;
+    color: white;
     text-align: center;
-    padding: 22px;
-    margin-top: 40px;
+    padding: 25px;
+    margin-top: 50px;
 }
 
-/* Tablet and Mobile Layout */
-@media screen and (max-width: 800px) {
+/*=================================================
+                Responsive Design
+==================================================*/
+
+@media screen and (max-width: 900px) {
 
     nav {
         flex-direction: column;
-        padding: 16px 20px;
+        gap: 15px;
     }
 
     .nav-links {
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 18px;
     }
 
-    .skills-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* Small Mobile Layout */
-@media screen and (max-width: 520px) {
-
-    .nav-links {
-        gap: 10px 16px;
+    .hero h1 {
+        font-size: 2.7em;
     }
 
-    .nav-links a {
-        font-size: 0.95rem;
+    .hero h2 {
+        font-size: 1.5em;
     }
 
-    .hero {
-        padding: 55px 18px;
-    }
-
-    main {
-        width: 94%;
-        margin-top: 25px;
-    }
-
-    main section {
-        padding: 22px 18px;
-    }
-
-    .skills-list {
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
-    .contact-links {
-        flex-direction: column;
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
-    .button {
-        text-align: center;
-    }
 }
